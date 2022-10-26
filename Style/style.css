@@ -1,0 +1,61 @@
+* {
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: cadetblue;
+  display: grid;
+  grid-template-rows: 10% 60% 30%;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  justify-content: center;
+}
+header #pergunta {
+  justify-self: center;
+  font-size: x-large;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main #timer {
+  justify-self: flex-start;
+  align-content: center;
+  font-size: 3em;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+section #resp1 {
+  background-color: rgb(243, 54, 54);
+}
+section #resp2 {
+  background-color: rgb(54, 114, 243);
+}
+section #resp3 {
+  background-color: rgb(243, 199, 54);
+}
+section #resp4 {
+  background-color: rgb(85, 243, 54);
+}
+section #resp4:hover {
+  background-color: rgb(250, 235, 235);
+  cursor: pointer;
+}
+section button {
+  width: 50rem;
+  height: 3.5em;
+  margin: auto;
+  border: 0;
+  font-size: large;
+}
+section button:hover {
+  background: currentColor;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
