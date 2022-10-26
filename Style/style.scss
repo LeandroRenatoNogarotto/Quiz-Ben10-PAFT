@@ -27,38 +27,59 @@ main {
         align-content: center;
         font-size: 3em;
     }
+
+    #imagem{
+        max-width: 70%;
+        max-height: 100%;
+    }
 }
 
 section {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 
     #resp1{
         background-color: rgb(243, 54, 54);
+        &:hover{
+            background-color: rgb(243, 24, 24);
+        }
     }
     #resp2{
         background-color: rgb(54, 114, 243);
+        &:hover{
+            background-color: rgb(20, 60, 240);
+            cursor: pointer;
+            box-shadow: 0px 2px inset cadetblue;
+        }
     }
     #resp3{
         background-color: rgb(243, 199, 54);
+        &:hover{
+        background-color: rgb(241, 245, 31);
+        cursor: pointer;
+        box-shadow: 0px 2px inset cadetblue;
+    }
     }
     #resp4{
         background-color: rgb(85, 243, 54);
         &:hover{
-            background-color: rgb(250, 235, 235);
-            cursor: pointer;
-        }
+        background-color: rgb(42, 245, 24);
+        cursor: pointer;
+        box-shadow: 0px 2px inset cadetblue;
     }
+    }
+}
 
-    button {
-        width: 50rem;
-        height: 3.5em;
-        margin: auto;
-        border: 0;
-        font-size: large;
-        &:hover{
-            background: currentColor;
-            cursor: pointer;
-        }
+button {
+    width: 45%;
+    height: 3.5em;
+    margin: auto;
+    border: 0;
+    font-size: large;
+    box-shadow: -2px -2px inset;
+    &:hover{
+        background-color: rgb(255, 255, 255);
+        cursor: pointer;
+        box-shadow: 0px 2px inset cadetblue;
     }
 }
