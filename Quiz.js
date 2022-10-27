@@ -5,14 +5,20 @@ function comecar() {
 }
 
 let timer = document.querySelector('#timer');
+timer.innerHTML = 15;
 function updateTimer(){
     timer.innerHTML--;
-    if(timer.innerHTML <= 0)
+    if(timer.innerHTML <= 0 && pergAtiva == true){
+        verifica_questao(-1);
+    }
+    else if(timer.innerHTML <= 0 && numero_questao < listaPerguntas.length - 1)
+        proxima_questao();
+    else if(timer.innerHTML <= 0){
         clearInterval(t);
-}
-let j = 5;
-function updateAfter(){
-    j--;
+        let body = document.body;
+        body.style.opacity = 0.3;
+    }
+    
 }
 let t = setInterval(updateTimer, 1000);
 
@@ -80,31 +86,31 @@ function inicia_questao(n) {
     resposta3.innerHTML = listaPerguntas[n].r3;
     resposta4.innerHTML = listaPerguntas[n].r4;
     imagem.src = listaPerguntas[n].img;
+    for(let i = 0; i < listaRespostas.length; i++){
+        listaRespostas[i].style.opacity = 1; 
+    }
+}
+
+function proxima_questao(){
+    timer.innerHTML = 15;
+    inicia_questao(++numero_questao);
+    pergAtiva = true;
 }
 
 inicia_questao(numero_questao);
 
+let pergAtiva = true;
 function verifica_questao(resposta){
+    if(!pergAtiva)
+        return 0;
+    pergAtiva = false;
     if(resposta === listaPerguntas[numero_questao].gabarito){
         pontuacao++;
-    }
-    /* deixa em cinza as questoes erradas
+    }    
+    console.log("Pontuacao: " + pontuacao);
     for(let i = 0; i < listaRespostas.length; i++){
-        if(numero_questao != i)
-            listaRespostas[i].style.backgroundColor = 'rgba(117, 108, 108, 0.699)'; 
+        if(listaPerguntas[numero_questao].gabarito - 1 != i)
+            listaRespostas[i].style.opacity = 0.5; 
     }
-    */
-    clearInterval(t);
-    j = 5;
-    let o = setInterval(updateTimer, 1000);
-    
-    if(numero_questao < 4){
-        console.log("Resposta: " + resposta);
-        console.log("Gabarito: " + listaPerguntas[numero_questao].gabarito);
-        console.log("Pontuacao: " + pontuacao);
-
-        timer.innerHTML = 20;
-        t = setInterval(updateTimer, 1000);
-        inicia_questao(++numero_questao);
-    }
+    timer.innerHTML = 5;    
 }
