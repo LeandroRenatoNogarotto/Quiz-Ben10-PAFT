@@ -15,8 +15,10 @@ function updateTimer(){
         proxima_questao();
     else if(timer.innerHTML <= 0){
         clearInterval(t);
-        let body = document.body;
-        body.style.opacity = 0.3;
+        document.body.querySelector('header').style.opacity = 0.8;
+        document.body.querySelector('main').style.opacity = 0.3;
+        document.body.querySelector('section').style.opacity = 0.3;
+        mostrar_pontuacao();
     }
     
 }
@@ -113,4 +115,29 @@ function verifica_questao(resposta){
             listaRespostas[i].style.opacity = 0.5; 
     }
     timer.innerHTML = 5;    
+}
+
+function mostrar_pontuacao(){
+    let div = document.createElement('div');
+    div.id = 'div-fundo'
+    
+    let card = document.createElement('div');
+    card.id = "div-card";
+    div.style.position = 'fixed'; 
+    div.appendChild(card);
+
+    let tituloP = document.createElement('h2');
+    tituloP.innerText = "Pontuação";
+    card.appendChild(tituloP);
+
+    let texto = document.createElement('p');
+    texto.innerHTML = 'Questões corretas: ' + pontuacao;
+    card.appendChild(texto);
+
+    let botao = document.createElement('button');
+    botao.innerHTML = 'voltar';
+    botao.addEventListener('click', function(){ window.location.href='Home.html'; })
+    card.appendChild(botao);
+
+    document.body.appendChild(div);
 }

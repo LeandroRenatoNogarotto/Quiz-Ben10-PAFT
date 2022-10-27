@@ -6,6 +6,7 @@ body {
     background-color: cadetblue;
     display: grid;
     grid-template-rows: 10% 60% 30%;
+    margin: 0;
 }
 
 header {
@@ -76,6 +77,49 @@ section {
             background-color: rgb(255, 255, 255);
             cursor: pointer;
             box-shadow: 3px 3px inset cadetblue;
+        }
+    }
+}
+
+#div-fundo{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#div-card {
+    position: fixed;
+    text-align: center;
+    width: 20%;
+    height: 20%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px;
+    background-color: rgb(48, 204, 48);
+    min-width: 15em;
+    min-height: 10em;
+    h2{
+        font-size: xx-large;
+    }
+    p {
+        font-size: x-large;
+        margin-top: 1.5em;
+    }
+    button {
+        padding: auto;
+        border: 0;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        padding: 0.5em 1em;
+        border-radius: 0.3em;
+        background-color: rgb(255, 255, 255);
+        &:hover{
+            background-color: rgb(19, 24, 19);
+            color: white;
         }
     }
 }
