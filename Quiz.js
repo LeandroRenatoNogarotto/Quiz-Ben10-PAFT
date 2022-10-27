@@ -71,4 +71,4 @@ function inicia_questao(n) {
     imagem.src = listaPerguntas[n-1].img;
 }
 
-inicia_questao(5);
+inicia_questao(1);

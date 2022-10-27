@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color: cadetblue;
+  background-color: #abff4f;
+  background-image: url("../Images/meteoros.jpg");
+  background-position: right;
   display: grid;
   grid-template-rows: 10% 60% 30%;
 }
@@ -14,6 +16,7 @@ header {
   justify-content: center;
 }
 header #pergunta {
+  color: #ffffff;
   justify-self: center;
   font-size: x-large;
 }
@@ -37,34 +40,34 @@ section {
   flex-wrap: wrap;
 }
 section #resp1 {
-  background-color: rgb(243, 54, 54);
+  background-color: #f21b3f;
 }
 section #resp1:hover {
-  background-color: rgb(243, 24, 24);
+  background-color: rgb(204, 33, 33);
 }
 section #resp2 {
-  background-color: rgb(54, 114, 243);
+  background-color: #08bdbd;
 }
 section #resp2:hover {
-  background-color: rgb(20, 60, 240);
+  background-color: rgb(21, 144, 226);
   cursor: pointer;
-  box-shadow: 0px 2px inset cadetblue;
+  box-shadow: 0px 2px inset #abff4f;
 }
 section #resp3 {
-  background-color: rgb(243, 199, 54);
+  background-color: #ff9914;
 }
 section #resp3:hover {
-  background-color: rgb(241, 245, 31);
+  background-color: rgb(218, 181, 19);
   cursor: pointer;
-  box-shadow: 0px 2px inset cadetblue;
+  box-shadow: 0px 2px inset #abff4f;
 }
 section #resp4 {
-  background-color: rgb(85, 243, 54);
+  background-color: #abff4f;
 }
 section #resp4:hover {
-  background-color: rgb(42, 245, 24);
+  background-color: rgb(32, 177, 19);
   cursor: pointer;
-  box-shadow: 0px 2px inset cadetblue;
+  box-shadow: 0px 2px inset #abff4f;
 }
 
 button {
