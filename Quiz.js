@@ -26,49 +26,42 @@ let t = setInterval(updateTimer, 1000);
 
 const questao1 = {
     pergunta: "Qual o nome completo do Ben 10?",
-    r1: "Benjamin Kirby Tennyson",
-    r2: "Robert Souza Tennyson",
-    r3: "Ben Silva Tennyson",
-    r4: "Benio Tenia Neves",
-    gabarito: 1,
+    respostas: embaralha_lista(["Benjamin Kirby Tennyson", "Robert Souza Tennyson", "Ben Silva Tennyson", "Benio Tenia Neves"]),
     img: "./Images/ben10.jpg"
 }
+questao1.gabarito = questao1.respostas.indexOf('Benjamin Kirby Tennyson') + 1;
+
 const questao2 = {
     pergunta: "Qual o parentesco da Gwen Tennyson com o Ben 10?",
-    r1: "Prima",
-    r2: "Irma",
-    r3: "Amiga",
-    r4: "Namorada",
+    respostas: embaralha_lista(["Prima", "Irma", "Amiga", "Namorada"]),
     gabarito: 1,
     img: "./Images/gwen.webp"
 }
+questao2.gabarito = questao2.respostas.indexOf('Prima') + 1;
+
 const questao3 = {
     pergunta: "Qual o nome correto do alien da figura abaixo?",
-    r1: "XLR8",
-    r2: "XRL80",
-    r3: "CB160",
-    r4: "RTX1080",
+    respostas: embaralha_lista(["XLR8", "XRL80", "CB160", "RTX1080"]),
     gabarito: 1,
     img: "./Images/XLR8.webp"
 }
+questao3.gabarito = questao3.respostas.indexOf('XLR8') + 1;
+
 const questao4 = {
     pergunta: "Qual o nome do alien da figura abaixo?",
-    r1: "Ultra-T",
-    r2: "XLR8",
-    r3: "Massa Cinzenta",
-    r4: "Insectóide",
+    respostas: embaralha_lista(["Ultra-T", "XLR8", "Massa Cinzenta", "Insectóide"]),
     gabarito: 1,
     img: "./Images/ultraT.jpg"
 }
+questao4.gabarito = questao4.respostas.indexOf('Ultra-T') + 1;
+
 const questao5 = {
     pergunta: "Qual desses é um vilão do Ben 10?",
-    r1: "Vilgax",
-    r2: "Toguro",
-    r3: "Alfred",
-    r4: "Aku",
+    respostas: embaralha_lista(["Vilgax", "Toguro", "Alfred", "Aku"]),
     gabarito: 1,
     img: "./Images/ben102.jpg"
 }
+questao5.gabarito = questao5.respostas.indexOf('Vilgax') + 1;
 
 function embaralha_lista(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -76,6 +69,9 @@ function embaralha_lista(arr) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+function embaralha_respostas(){
+    listaPerguntas[0].gabarito = respostas.indexOf("Benjamin Kirby Tennyson");
 }
 
 let listaPerguntas = embaralha_lista([questao1, questao2, questao3, questao4, questao5]);
@@ -91,10 +87,10 @@ let numero_questao = 0;
 
 function inicia_questao(n) {
     enunciado.innerHTML = listaPerguntas[n].pergunta;
-    resposta1.innerHTML = listaPerguntas[n].r1;
-    resposta2.innerHTML = listaPerguntas[n].r2;
-    resposta3.innerHTML = listaPerguntas[n].r3;
-    resposta4.innerHTML = listaPerguntas[n].r4;
+    resposta1.innerHTML = listaPerguntas[n].respostas[0];
+    resposta2.innerHTML = listaPerguntas[n].respostas[1];
+    resposta3.innerHTML = listaPerguntas[n].respostas[2];
+    resposta4.innerHTML = listaPerguntas[n].respostas[3];
     imagem.src = listaPerguntas[n].img;
     for(let i = 0; i < listaRespostas.length; i++){
         listaRespostas[i].style.opacity = 1; 
