@@ -24,6 +24,8 @@ function updateTimer(){
 }
 let t = setInterval(updateTimer, 1000);
 
+document.body.querySelector('audio').volume = 0.1;
+
 const questao1 = {
     pergunta: "Qual o nome completo do Ben 10?",
     respostas: embaralha_lista(["Benjamin Kirby Tennyson", "Robert Souza Tennyson", "Ben Silva Tennyson", "Benio Tenia Neves"]),
