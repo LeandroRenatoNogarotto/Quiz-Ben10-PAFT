@@ -70,7 +70,15 @@ const questao5 = {
     img: "./Images/ben102.jpg"
 }
 
-let listaPerguntas = [questao1, questao2, questao3, questao4, questao5];
+function embaralha_lista(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+let listaPerguntas = embaralha_lista([questao1, questao2, questao3, questao4, questao5]);
 let enunciado = document.querySelector('#pergunta');
 let resposta1 = document.getElementById('resp1');
 let resposta2 = document.querySelector('#resp2');
