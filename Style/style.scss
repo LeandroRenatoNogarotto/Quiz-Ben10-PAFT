@@ -28,7 +28,9 @@ header {
     #numeroPergunta
     {
         color: azure;
-        justify-self:end;
+        font-size: xx-large;
+        font-weight: bold;
+        justify-self: flex-start;
     }
 }
 main {
@@ -137,3 +139,9 @@ section {
         }
     }
 }
+
+@media only screen and (max-width: 600px) {
+    #imagem{
+        height: 25rem;
+    }
+  }

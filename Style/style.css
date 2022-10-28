@@ -24,7 +24,9 @@ header #pergunta {
 }
 header #numeroPergunta {
   color: azure;
-  justify-self: end;
+  font-size: xx-large;
+  font-weight: bold;
+  justify-self: flex-start;
 }
 
 main {
@@ -129,4 +131,10 @@ section button:hover {
 #div-card button:hover {
   background-color: rgb(19, 24, 19);
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #imagem {
+    height: 25rem;
+  }
 }/*# sourceMappingURL=style.css.map */

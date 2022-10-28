@@ -104,7 +104,10 @@ function inicia_questao(n) {
     for(let i = 0; i < listaRespostas.length; i++){
         listaRespostas[i].style.opacity = 1; 
     }
+    qual_questao.innerHTML = (numero_questao + 1) + '/' + listaPerguntas.length;
 }
+
+let qual_questao = document.getElementById('numeroPergunta');
 
 function proxima_questao(){
     timer.innerHTML = 15;
