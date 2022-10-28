@@ -1,34 +1,44 @@
 * {
     font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
 }
 
 body {
-    background-color: cadetblue;
+    background-color: #254206;
+    background-image: url("../Images/meteoros.jpg");
+    background-position:right;
     display: grid;
     grid-template-rows: 10% 60% 30%;
-    margin: 0;
 }
 
 header {
     display: grid;
     grid-template-columns: 90% 10%;
     justify-content: center;
+    align-content: center;
 
     #pergunta{
-        justify-self: center;
+        justify-self:center;
         font-size: x-large;
+        color: azure;
+    }
+    #numeroPergunta
+    {
+        color: azure;
+        justify-self:end;
     }
 }
 main {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     #timer{
         font-size: 3em;
-        margin-right: 8%;
+        margin-right: 5%;
+        margin-left: 5%;
         background-color: white;
-        padding: 10px;
+        padding: 10px;   
     }
 
     #imagem{
@@ -76,7 +86,7 @@ section {
         &:hover{
             background-color: rgb(255, 255, 255);
             cursor: pointer;
-            box-shadow: 3px 3px inset cadetblue;
+            box-shadow: 3px 3px inset rgb(5, 56, 20);
         }
     }
 }
