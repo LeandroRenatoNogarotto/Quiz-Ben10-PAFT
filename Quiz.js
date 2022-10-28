@@ -63,6 +63,13 @@ const questao5 = {
 }
 questao5.gabarito = questao5.respostas.indexOf('Vilgax') + 1;
 
+const questao6 = {
+    pergunta: "Qual o nome do vô do Ben 10?",
+    respostas: embaralha_lista(["Max", "Vicente", "Alfred", "Bob"]),
+    img: "./Images/voBen10.jpg"
+}
+questao6.gabarito = questao6.respostas.indexOf('Max') + 1;
+
 function embaralha_lista(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -74,7 +81,7 @@ function embaralha_respostas(){
     listaPerguntas[0].gabarito = respostas.indexOf("Benjamin Kirby Tennyson");
 }
 
-let listaPerguntas = embaralha_lista([questao1, questao2, questao3, questao4, questao5]);
+let listaPerguntas = embaralha_lista([questao1, questao2, questao3, questao4, questao5, questao6]);
 let enunciado = document.querySelector('#pergunta');
 let resposta1 = document.getElementById('resp1');
 let resposta2 = document.querySelector('#resp2');
