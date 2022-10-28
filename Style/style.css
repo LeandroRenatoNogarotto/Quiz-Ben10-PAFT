@@ -18,8 +18,9 @@ header {
 }
 header #pergunta {
   justify-self: center;
-  font-size: x-large;
+  font-size: xx-large;
   color: azure;
+  font-weight: bold;
 }
 header #numeroPergunta {
   color: azure;
