@@ -80,6 +80,7 @@ let listaRespostas = [resposta1, resposta2, resposta3, resposta4];
 let imagem = document.querySelector('#imagem');
 let pontuacao = 0;
 let numero_questao = 0;
+let vetor_questoes_passadas = new Array();
 
 function inicia_questao(n) {
     enunciado.innerHTML = listaPerguntas[n].pergunta;
@@ -93,13 +94,25 @@ function inicia_questao(n) {
     }
 }
 
+function questao_aleatoria(vetor_questoes_passadas)
+{
+    numero_questao = Math.floor(Math.random() *5 + 1);
+    for(let i = 0; i < vetor_questoes_passadas.length; i++)
+    {
+        if(vetor_questoes_passadas[i] == numero_questao)
+        questao_aleatoria(vetor_questoes_passadas);
+    }
+    vetor_questoes_passadas.push(numero_questao);
+    inicia_questao(numero_questao);
+}
+
 function proxima_questao(){
     timer.innerHTML = 15;
-    inicia_questao(++numero_questao);
+    questao_aleatoria(vetor_questoes_passadas);
     pergAtiva = true;
 }
 
-inicia_questao(numero_questao);
+questao_aleatoria(vetor_questoes_passadas);
 
 let pergAtiva = true;
 function verifica_questao(resposta){
