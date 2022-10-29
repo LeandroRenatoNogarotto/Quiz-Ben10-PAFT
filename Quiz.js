@@ -24,7 +24,7 @@ function updateTimer(){
 }
 let t = setInterval(updateTimer, 1000);
 
-document.body.querySelector('audio').volume = 0.1;
+document.body.querySelector('audio').volume = 0.9;
 
 const questao1 = {
     pergunta: "Qual o nome completo do Ben 10?",
